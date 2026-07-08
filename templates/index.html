@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>SecurePass Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>SecurePass Analyzer</h1>
+
+    <p>
+        Analyze password strength,
+        detect breaches and estimate
+        crack time.
+    </p>
+
+    <div class="input-group">
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password">
+
+        <button id="toggle">
+            👁
+        </button>
+
+    </div>
+
+    <button id="generate">
+        🔐 Generate Strong Password
+    </button>
+
+    <div class="strength-card">
+
+        <div class="strength-header">
+
+            <span>Password Strength</span>
+
+            <span id="percent">
+                0%
+            </span>
+
+        </div>
+
+        <h2 id="strength">
+            Weak
+        </h2>
+
+        <p id="score">
+            Score: 0/4
+        </p>
+
+        <div class="progress">
+
+            <div id="progress-bar">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>SHA256 Hash</h3>
+
+            <p id="sha256">-</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>bcrypt Hash</h3>
+
+            <p id="bcrypt">-</p>
+
+        </div>
+
+    </div>
+
+    <div class="extra-info">
+
+        <div class="info-box">
+            <h3>Crack Time</h3>
+            <p id="crack-time">-</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Dictionary Attack</h3>
+            <p id="dictionary">-</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Brute Force</h3>
+            <p id="bruteforce">-</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Breach Status</h3>
+            <p id="breach">
+                ✅ Safe
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h3>Entropy</h3>
+            <p id="entropy">
+                -
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src=
+"{{ url_for('static',
+filename='script.js') }}">
+</script>
+
+</body>
+</html>

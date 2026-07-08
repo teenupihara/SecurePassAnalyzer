@@ -1,0 +1,363 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+        linear-gradient(rgba(0,0,0,.75),
+        rgba(0,0,0,.85)),
+        url("https://images.unsplash.com/photo-1510511459019-5dda7724fd87");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+}
+
+.container{
+
+    width:850px;
+    max-width:95%;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(0,15,40,.55);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(0,255,255,.2);
+
+    box-shadow:
+        0 0 40px rgba(0,255,255,.25);
+
+    animation:float 4s infinite ease-in-out;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.title-small{
+
+    text-align:center;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    color:#00ffff;
+
+    margin-bottom:15px;
+}
+
+h1{
+
+    text-align:center;
+
+    font-size:60px;
+
+    margin-bottom:10px;
+}
+
+.container p{
+
+    text-align:center;
+
+    color:#cfd8dc;
+
+    margin-bottom:25px;
+}
+
+.input-group{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:15px;
+}
+
+input{
+
+    flex:1;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:2px solid #00cfff;
+
+    background:#041d3d;
+
+    color:white;
+
+    font-size:18px;
+
+    outline:none;
+}
+
+input:focus{
+
+    box-shadow:0 0 15px cyan;
+}
+
+#toggle{
+
+    width:70px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#0a284a;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+}
+
+#toggle:hover{
+
+    box-shadow:0 0 15px cyan;
+}
+
+#generate{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00cfff,
+            #00ffd0
+        );
+
+    transition:.3s;
+}
+
+#generate:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 20px cyan;
+}
+
+.strength-card{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:#03142b;
+}
+
+.strength-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+#percent{
+
+    background:#0b4c6b;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+}
+
+#strength{
+
+    margin-top:15px;
+
+    font-size:38px;
+}
+
+#score{
+
+    margin-top:10px;
+
+    text-align:left;
+}
+
+.progress{
+
+    width:100%;
+
+    height:14px;
+
+    background:#222;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:20px;
+}
+
+#progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            cyan,
+            #00ff99
+        );
+
+    transition:all .5s ease;
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+    margin-top:25px;
+}
+
+.card{
+
+    background:#071d3a;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    min-height:170px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.card h3{
+
+    margin-bottom:15px;
+}
+
+.card p{
+
+    font-size:12px;
+
+    color:#cfd8dc;
+
+    word-break:break-all;
+
+    overflow-wrap:break-word;
+
+    max-height:90px;
+
+    overflow-y:auto;
+
+    line-height:1.6;
+
+    text-align:left;
+}
+
+.card p::-webkit-scrollbar{
+
+    width:5px;
+}
+
+.card p::-webkit-scrollbar-thumb{
+
+    background:cyan;
+
+    border-radius:10px;
+}
+
+#crack-time{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#00ffff;
+}
+
+button{
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:scale(1.02);
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:40px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .input-group{
+        flex-direction:column;
+    }
+
+    #toggle{
+        width:100%;
+        height:55px;
+    }
+}
